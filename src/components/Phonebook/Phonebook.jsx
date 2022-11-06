@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { useState, useEffect } from 'react';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { nanoid } from 'nanoid';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import ContactForm from '../ContactsForm/ContactsForm';
 import { FilterBox } from '../ContactsFilter/ContactsFilter';
@@ -80,7 +80,7 @@ export const Phonebook = () => {
   };
 
   // const { filter } = this.state;
-  const visibleContacts = this.getVisibleContacts();
+  const visibleContacts = getVisibleContacts();
   // const { addContact, changeFilter, removeContact } = this;
   return (
     <div>
