@@ -10,7 +10,6 @@ import PropTypes from 'prop-types';
 import { ContactForm } from '../ContactsForm/ContactsForm';
 import { FilterBox } from '../ContactsFilter/ContactsFilter';
 import { ContactListBox } from '../ContactsList/ContactsList';
-// import { useEffect } from 'react';
 
 export const Phonebook = () => {
   const [contacts, setContacts] = useState([]);
