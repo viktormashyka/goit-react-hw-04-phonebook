@@ -1,6 +1,6 @@
 // import { useState } from 'react';
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 // export const ContactForm = ({ onSubmit }) => {
 //   const [name, setName] = useState('');
@@ -134,9 +134,9 @@ export class ContactForm extends Component {
   }
 }
 
-ContactForm.propTypes = {
-  state: PropTypes.string.shape({
-    name: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
-  }).isRequired,
-};
+// ContactForm.propTypes = {
+//   state: PropTypes.string.shape({
+//     name: PropTypes.string.isRequired,
+//     number: PropTypes.string.isRequired,
+//   }).isRequired,
+// };

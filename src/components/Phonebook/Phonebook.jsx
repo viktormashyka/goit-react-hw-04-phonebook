@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { nanoid } from 'nanoid';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import { ContactForm } from '../ContactsForm/ContactsForm';
 import { FilterBox } from '../ContactsFilter/ContactsFilter';
@@ -188,9 +188,9 @@ export const Phonebook = () => {
 //   }
 // }
 
-Phonebook.propTypes = {
-  state: PropTypes.shape({
-    contacts: PropTypes.array.isRequired,
-    filter: PropTypes.string.isRequired,
-  }).isRequired,
-};
+// Phonebook.propTypes = {
+//   state: PropTypes.shape({
+//     contacts: PropTypes.array.isRequired,
+//     filter: PropTypes.string.isRequired,
+//   }).isRequired,
+// };
