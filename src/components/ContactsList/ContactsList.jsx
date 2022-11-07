@@ -6,7 +6,12 @@ export const ContactListBox = ({ visibleContacts, onRemoveContact }) => {
       {visibleContacts.map(contact => (
         <li
           key={contact.id}
-          style={{ marginLeft: 30, fontSize: 24, widht: 400 }}
+          style={{
+            fontSize: 24,
+            width: 450,
+            display: 'flex',
+            justifyContent: 'space-between',
+          }}
         >
           {contact.name}: {contact.number}
           <button
@@ -14,7 +19,10 @@ export const ContactListBox = ({ visibleContacts, onRemoveContact }) => {
             onClick={() => {
               onRemoveContact(contact.id);
             }}
-            style={{ marginLeft: 30, fontSize: 16 }}
+            style={{
+              marginLeft: 30,
+              fontSize: 16,
+            }}
           >
             Delete
           </button>

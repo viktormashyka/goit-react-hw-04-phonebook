@@ -11,7 +11,7 @@ import { ContactForm } from '../ContactsForm/ContactsForm';
 import { FilterBox } from '../ContactsFilter/ContactsFilter';
 import { ContactListBox } from '../ContactsList/ContactsList';
 
-export const Phonebook = () => {
+export const Phonebook = ({ onSubmit }) => {
   const [contacts, setContacts] = useState([]);
   const [filter, setFilter] = useState('');
 
