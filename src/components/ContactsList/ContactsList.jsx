@@ -8,7 +8,7 @@ export const ContactListBox = ({ visibleContacts, onRemoveContact }) => {
           key={contact.id}
           style={{
             fontSize: 24,
-            width: 450,
+            width: 500,
             display: 'flex',
             justifyContent: 'space-between',
           }}

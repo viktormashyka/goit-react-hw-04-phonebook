@@ -13,7 +13,7 @@ import { ContactListBox } from '../ContactsList/ContactsList';
 
 export const Phonebook = ({ onSubmit }) => {
   const [contacts, setContacts] = useState([]);
-  const [filter, setFilter] = useState('');
+  const [filterContacts, setFilterContacts] = useState('');
 
   useEffect(() => {
     console.log('componentDidMount...');
@@ -26,7 +26,7 @@ export const Phonebook = ({ onSubmit }) => {
   }, []);
 
   useEffect(() => {
-    // console.log('componentDidUpdate...');
+    console.log('componentDidUpdate...');
     // const nextContacts = contacts;
     // const prevContacts = prevContacts;
     // if (nextContacts !== prevContacts) {
@@ -58,12 +58,12 @@ export const Phonebook = ({ onSubmit }) => {
 
   const changeFilter = evt => {
     // this.setState({ filter: evt.currentTarget.value });
-    setFilter(evt.currentTarget.value);
+    setFilterContacts(evt.currentTarget.value);
   };
 
   const getVisibleContacts = () => {
     // const { filter, contacts } = this.state;
-    const normalizeToLowerCase = filter.toLowerCase();
+    const normalizeToLowerCase = filterContacts.toLowerCase();
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizeToLowerCase)
     );
@@ -89,7 +89,7 @@ export const Phonebook = ({ onSubmit }) => {
         <h2 style={{ marginLeft: 30, fontSize: 32 }}>Contacts</h2>
       </div>
       <div>
-        <FilterBox value={filter} onChange={changeFilter} />
+        <FilterBox value={filterContacts} onChange={changeFilter} />
         <ContactListBox
           visibleContacts={visibleContacts}
           onRemoveContact={removeContact}
