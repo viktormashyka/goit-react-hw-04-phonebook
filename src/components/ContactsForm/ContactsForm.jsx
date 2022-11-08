@@ -1,44 +1,21 @@
 import { useState } from 'react';
-// import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 
 export const ContactForm = ({ onSubmit }) => {
-  //   state = { name: '', number: '' };
-  // const [name, setName] = useState('');
-  // const [number, setNumber] = useState('');
   const [inputValues, setInputValues] = useState({ name: '', number: '' });
 
   const handleChange = evt => {
     const { name, value } = evt.target;
-    // this.setState({ [name]: value });
-    // setInputValues({ [name]: value });
     setInputValues({ ...inputValues, [name]: value });
-    // setName(value);
-    // setNumber(value);
-    // console.log('{ [name]: value }, ', { [name]: value });
   };
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    // const { name, number } = this.state;
-
-    // this.props.onSubmit({ ...this.state });
     onSubmit({ ...inputValues });
 
     setInputValues({ name: '', number: '' });
-
-    // reset({ name, number });
   };
 
-  // const reset = () => {
-  //   // this.setState({ name: '', number: '' });
-  //   setInputValues({ name: '', number: '' });
-  //   // setName('');
-  //   // setNumber('');
-  // };
-
-  // const { handleChange, handleSubmit } = this;
-  // const { name, number } = this.state;
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="" style={{ marginLeft: 30, fontSize: 24 }}>

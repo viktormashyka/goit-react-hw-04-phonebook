@@ -22,23 +22,14 @@ export const Phonebook = ({ onSubmit }) => {
     if (parsedContacts) {
       setContacts(parsedContacts);
     }
-    // console.log('parsedContacts..., ', parsedContacts);
   }, []);
 
   useEffect(() => {
-    console.log('componentDidUpdate...');
-    // const nextContacts = contacts;
-    // const prevContacts = prevContacts;
-    // if (nextContacts !== prevContacts) {
-    //   console.log('Обновилось поле contacts, записую contacts в LocalStorage');
-    //   localStorage.setItem('contacts', JSON.stringify(nextContacts));
-    // }
     console.log('Обновилось поле contacts, записую contacts в LocalStorage');
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
   const addContact = contact => {
-    // const { contacts } = this.state;
     const { name, number } = contact;
     const newContact = { id: nanoid(), name, number };
 
@@ -48,21 +39,15 @@ export const Phonebook = ({ onSubmit }) => {
         return;
       }
     }
-    // this.setState(prevState => ({
-    //   contacts: [...prevState.contacts, newContact],
-    // }));
 
     setContacts(prevContacts => [...prevContacts, newContact]);
-    // console.log('addContact..., contacts ', contacts);
   };
 
   const changeFilter = evt => {
-    // this.setState({ filter: evt.currentTarget.value });
     setFilterContacts(evt.currentTarget.value);
   };
 
   const getVisibleContacts = () => {
-    // const { filter, contacts } = this.state;
     const normalizeToLowerCase = filterContacts.toLowerCase();
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizeToLowerCase)
@@ -70,17 +55,12 @@ export const Phonebook = ({ onSubmit }) => {
   };
 
   const removeContact = id => {
-    // this.setState(({ contacts }) => ({
-    //   contacts: contacts.filter(contact => contact.id !== id),
-    // }));
-    setContacts(({ contacts }) =>
-      contacts.filter(contact => contact.id !== id)
+    setContacts(prevContacts =>
+      prevContacts.filter(contact => contact.id !== id)
     );
   };
 
-  // const { filter } = this.state;
   const visibleContacts = getVisibleContacts();
-  // const { addContact, changeFilter, removeContact } = this;
   return (
     <div>
       <h1 style={{ marginLeft: 30, fontSize: 32 }}>Phonebook</h1>
