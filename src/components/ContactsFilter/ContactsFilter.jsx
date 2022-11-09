@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const FilterBox = ({ value, onChange }) => {
   return (
@@ -17,4 +18,9 @@ export const FilterBox = ({ value, onChange }) => {
       />
     </label>
   );
+};
+
+FilterBox.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
 };

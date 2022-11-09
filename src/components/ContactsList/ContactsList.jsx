@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const ContactListBox = ({ visibleContacts, onRemoveContact }) => {
   return (
@@ -30,4 +31,9 @@ export const ContactListBox = ({ visibleContacts, onRemoveContact }) => {
       ))}
     </ul>
   );
+};
+
+ContactListBox.propTypes = {
+  visibleContacts: PropTypes.array.isRequired,
+  onRemoveContact: PropTypes.func.isRequired,
 };
